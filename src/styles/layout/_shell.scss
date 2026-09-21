@@ -1,0 +1,194 @@
+@use '../abstracts/tokens' as *;
+
+.shell {
+  display: grid;
+  grid-template-columns: 240px 1fr;
+  min-height: 100vh;
+
+  &__aside {
+    background: rgba(12, 20, 36, 0.92);
+    border-right: 1px solid rgba(255, 255, 255, 0.06);
+    padding: 24px 18px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  &__brand {
+    font-weight: 800;
+    letter-spacing: 0.04em;
+  }
+
+  &__nav {
+    display: grid;
+    gap: 8px;
+  }
+
+  &__link {
+    color: $soft;
+    padding: 10px 12px;
+    border-radius: 10px;
+  }
+
+  &__link.is-active,
+  &__link:hover {
+    background: $card;
+    color: $white;
+  }
+
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px 32px 0;
+  }
+}
+
+.login {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  padding: 24px;
+
+  &__card {
+    @include card;
+    width: min(420px, 100%);
+    padding: 32px;
+    display: grid;
+    gap: 18px;
+  }
+
+  &__hint {
+    background: $navy-2;
+    border-radius: 12px;
+    padding: 12px;
+    color: $muted;
+    font-size: 13px;
+  }
+}
+
+.editor {
+  display: grid;
+  gap: 8px;
+
+  &__meta {
+    display: flex;
+    justify-content: space-between;
+    color: $muted;
+    font-size: 12px;
+  }
+
+  &__area {
+    min-height: 280px;
+    font-family: 'SF Mono', Menlo, Consolas, monospace;
+    line-height: 1.5;
+    resize: vertical;
+  }
+}
+
+.console {
+  background: #071018;
+  border-radius: 12px;
+  padding: 14px;
+  font-family: 'SF Mono', Menlo, Consolas, monospace;
+  min-height: 120px;
+  white-space: pre-wrap;
+  color: $green;
+}
+
+.case-list {
+  list-style: none;
+  display: grid;
+  gap: 10px;
+  margin: 0;
+  padding: 0;
+}
+
+.case-result {
+  background: #071018;
+  border-radius: 12px;
+  padding: 12px 14px;
+  display: grid;
+  gap: 6px;
+  font-size: 13px;
+
+  &.is-ok {
+    color: $green;
+  }
+
+  &.is-err {
+    color: $red;
+  }
+
+  dl {
+    display: grid;
+    gap: 4px;
+    margin: 0;
+    color: $soft;
+  }
+
+  dt {
+    color: $muted;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+  }
+
+  dd {
+    margin: 0;
+    font-family: 'SF Mono', Menlo, Consolas, monospace;
+  }
+}
+
+.table-wrap {
+  overflow-x: auto;
+}
+
+.results-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: $card;
+  border-radius: $radius;
+  overflow: hidden;
+
+  th,
+  td {
+    text-align: left;
+    padding: 12px 14px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  }
+
+  th {
+    color: $muted;
+    font-size: 12px;
+    font-weight: 700;
+  }
+}
+
+.grid-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 16px;
+}
+
+.countdown {
+  display: grid;
+  gap: 6px;
+  justify-items: start;
+
+  strong,
+  &__value {
+    font-variant-numeric: tabular-nums;
+    font-size: 28px;
+    font-weight: 800;
+    letter-spacing: 0.04em;
+  }
+
+  &.is-warn strong {
+    color: $amber;
+  }
+
+  &.is-err strong {
+    color: $red;
+  }
+}

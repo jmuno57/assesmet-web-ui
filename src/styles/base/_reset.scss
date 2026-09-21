@@ -1,0 +1,67 @@
+@use '../abstracts/tokens' as *;
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  min-height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: 'Avenir Next', 'Segoe UI', sans-serif;
+  background:
+    radial-gradient(1200px 500px at 10% -10%, rgba(34, 211, 238, 0.12), transparent 50%),
+    radial-gradient(900px 400px at 100% 0%, rgba(129, 140, 248, 0.16), transparent 45%),
+    $navy;
+  color: $white;
+}
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+a {
+  color: $cyan;
+  text-decoration: none;
+}
+
+h1,
+h2,
+h3,
+p {
+  margin: 0;
+}
+
+.app-main {
+  padding: 28px 32px 48px;
+  max-width: 1180px;
+}
+
+.stack {
+  display: grid;
+  gap: 16px;
+}
+
+.row {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.muted {
+  color: $muted;
+}
+
+.error-text {
+  color: $red;
+}
