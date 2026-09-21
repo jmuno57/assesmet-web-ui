@@ -24,3 +24,5 @@ Usuarios mock:
 - Request/response van en envelope Base64 `{ payload }` con **un solo interceptor** (`src/lib/http.ts` + `src/lib/codec.ts`). Los servicios no cifran.
 - Componentes presentacionales + hooks + pages. UI en SASS dark azul.
 - Servicios mockeados con el mismo contrato HTTP del API futuro.
+- Producción: CloudFront sirve el SPA y `/api*` al ALB. `API_BASE_URL` queda en `/api`.
+- Despliegue: `.github/workflows/deploy.yml` sincroniza `dist/` a S3 e invalida CloudFront. Secret `AWS_ROLE_TO_ASSUME`.
